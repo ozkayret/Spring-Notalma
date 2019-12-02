@@ -6,14 +6,10 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.HibernateException;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import com.oguzkurtcebe.entity.Kisi;
 
 @Controller
 public class HomeController {
@@ -24,17 +20,16 @@ public class HomeController {
 		System.out.println(req.getRemoteAddr());
 		model.addAttribute("serverTime", "/");
 
-		return "home";
+		return "index";
 	}
 
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Model model) throws HibernateException, PropertyVetoException, SQLException {
+	@RequestMapping(value = "/detay", method = RequestMethod.GET)
+	public String home(Model model)  {
 	
 
-		model.addAttribute("serverTime", "/");
 
-		return "home";
+		return "detail";
 	}
 
 	@RequestMapping(value = "/error_404", method = RequestMethod.GET)
