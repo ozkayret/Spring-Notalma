@@ -8,8 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 @Entity
-public class Note {
-	
+public class Note {	
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
 private long id;
@@ -47,6 +46,11 @@ public Date getCreate_date() {
 }
 public void setCreate_date(Date create_date) {
 	this.create_date = create_date;
+}
+@Override
+public String toString() {
+	return "Note [id=" + id + ", user_id=" + user_id + ", title=" + title + ", content=" + content + ", create_date="
+			+ create_date + "]";
 }
 
 }

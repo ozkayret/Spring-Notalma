@@ -2,7 +2,9 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page session="false" %>
 
+
 <!DOCTYPE html>
+
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,15 +14,7 @@
 	<meta name="keywords" content="arama kelimeleri" />
 	<meta name="author" content="Oguz Kurtcebe" />
 
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
+>
 	<meta name="twitter:card" content="" />
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -38,7 +32,7 @@
 
 
 	<!-- Modernizr JS -->
-	<script src="asset/js/modernizr-2.6.2.min.js"></script>
+	<script src="assset/js/modernizr-2.6.2.min.js"></script>
 
 	</head>
 	<body>
@@ -52,12 +46,14 @@
 			<h2>Oğuz Kurtcebe</h2>
 			<p>Bilgisayar Mühendisiyim. Web ve Mobil uygulama geliştirmekteyim.</p>
 			<ul class="fh5co-social">
-				<li><a href="#"><i class="icon-Note">Not ekle</i></a></li>
-				
+				<li><a href="#"><i class="icon-twitter"></i></a></li>
+				<li><a href="#"><i class="icon-facebook"></i></a></li>
+				<li><a href="#"><i class="icon-instagram"></i></a></li>
 			</ul>
 		</div>
 
 	</div>
+
 	<!-- END #fh5co-offcanvas -->
 	<header id="fh5co-header">
 		
@@ -65,12 +61,9 @@
 
 			<div class="row">
 				<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-				<ul class="fh5co-social">
-					<li><a href="ekle"><i class="icon-Note"></i>Not Ekle</a></li>
-					
-				</ul>
+				
 				<div class="col-lg-12 col-md-12 text-center">
-					<h1 id="fh5co-logo"><a href="index.html">BLOĞUM</a></h1>
+					<h1 id="fh5co-logo">Notum</a></h1>
 				</div>
 
 			</div>
@@ -80,20 +73,35 @@
 	</header>
 	<!-- END #fh5co-header -->
 	<div class="container-fluid">
-		<div class="row fh5co-post-entry" id="list"> 
-			
-		
-	
+		<div class="row fh5co-post-entry single-entry">
+			<article class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+				
+
+				<h2 class="fh5co-article-title animate-box"><input type="text" id="note_title" placeholder="Başlık"></h2>
+				
+				
+				<div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
+					<div class="row">
+						<div class="col-lg-8 cp-r animate-box">
+							<textarea class="form form-control" id="note_detail" style="height: 400px;width: 100%" placeholder="içerik"></textarea>
+
+						</div>
+						<div class="col-lg-4 animate-box">
+							<div class="fh5co-highlight right">
+								<button class="btn-btn success" style="width:100%" onclick="addNote()">Kaydet</button>
+							
+							</div>
+						</div>
+					</div>
+
+				</div>
 			</article>
-			
 		</div>
 	</div>
 
 	<footer id="fh5co-footer">
 		<p><small>&copy; 2018.</small></p>
 	</footer>
-
-
 	
 	<!-- jQuery -->
 	<script src="asset/js/jquery.min.js"></script>
@@ -105,8 +113,7 @@
 	<script src="asset/js/jquery.waypoints.min.js"></script>
 	<!-- Main JS -->
 	<script src="asset/js/main.js"></script>
-	<script src="asset/custom/index.js"></script>
-
+    <script src="asset/custom/addNote.js"></script>
 	</body>
 </html>
 

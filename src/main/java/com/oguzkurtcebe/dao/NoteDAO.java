@@ -31,10 +31,26 @@ public class NoteDAO {
 	public void delete(Note note) {
 		sessionFactory.getCurrentSession().delete(note);
 	}
+//Read
+	
+	public Note getFindById(Long user_id) {
+		Query query = sessionFactory.getCurrentSession().createQuery("FROM Note WHERE user_id=:user_id")
+				.setLong("user_id", user_id);
 
+		return (Note) query.getSingleResult();
+	}
+	
 	public ArrayList<Note> getAll() {
 		Query query = sessionFactory.getCurrentSession().createQuery("FROM Note");
 		return (ArrayList<Note>) query.getResultList();
 
 	}
+
+	public ArrayList<Note> getAll(Long user_id) {
+		Query query = sessionFactory.getCurrentSession().createQuery("FROM Note WHERE user_id=:user_id")
+				.setLong("user_id", user_id);
+
+		return (ArrayList<Note>) query.getResultList();
+	}
+
 }
