@@ -1,11 +1,7 @@
 package com.oguzkurtcebe.notalma;
 
-import java.beans.PropertyVetoException;
-import java.sql.SQLException;
-
 import javax.servlet.http.HttpServletRequest;
 
-import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +14,9 @@ import com.oguzkurtcebe.service.NoteService;
 @Controller
 public class HomeController {
 
-//	@Autowired NoteService noteservice;
+	@Autowired
+	private NoteService noteservice;
+
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model, HttpServletRequest req) {
 
@@ -28,16 +26,18 @@ public class HomeController {
 		return "index";
 	}
 
-	
 	@RequestMapping(value = "/detay", method = RequestMethod.GET)
-	public String home(Model model)  {
-	//Note note=new Note();
-	//note.setTitle("Merhaba");
-	//note.setContent("Nasýlsýnýz");
-	//note.setUser_id(1l);
-	//noteservice.createNote(note);
+	public String home(Model model) {
+		 Note note=new Note();
+		 note.setTitle("Merhaba");
+		 note.setContent("Nasýlsýnýz");
+		 note.setUser_id(1l);
+		 noteservice.createNote(note);
 
+		/*for (Note note : noteservice.getAll()) {
+			System.out.println(note.getContent());
 
+		}*/
 		return "detail";
 	}
 

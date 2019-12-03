@@ -12,7 +12,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="açıklama" />
 	<meta name="keywords" content="arama kelimeleri" />
-	<meta name="author" content="Onur Ciner" />
+	<meta name="author" content="Oguz Kurtcebe" />
 
 >
 	<meta name="twitter:card" content="" />
