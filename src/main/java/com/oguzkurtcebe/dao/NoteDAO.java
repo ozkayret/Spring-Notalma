@@ -33,9 +33,9 @@ public class NoteDAO {
 	}
 //Read
 	
-	public Note getFindById(Long user_id) {
-		Query query = sessionFactory.getCurrentSession().createQuery("FROM Note WHERE user_id=:user_id")
-				.setLong("user_id", user_id);
+	public Note getFindById(Long id) {
+		Query query = sessionFactory.getCurrentSession().createQuery("FROM Note WHERE id=:id")
+				.setLong("id", id);
 
 		return (Note) query.getSingleResult();
 	}

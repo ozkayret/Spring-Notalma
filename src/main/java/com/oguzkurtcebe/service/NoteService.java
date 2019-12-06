@@ -16,24 +16,37 @@ import com.oguzkurtcebe.entity.Note;
 @Transactional
 public class NoteService {
 	@Autowired
-private NoteDAO noteDAO;
-	public long createNote(Note note,HttpServletRequest request) {
-		//TODO User id deðiþecek
+	private NoteDAO noteDAO;
+
+	public long createNote(Note note, HttpServletRequest request) {
+		// TODO User id deðiþecek
 		note.setUser_id(1l);
 		return noteDAO.insert(note);
-		
+
 	}
 
-	public Note getFindNoteById(Long userId) {
-		return noteDAO.getFindById(userId);
+	public long updateNote(Note note, HttpServletRequest request) {
+
+		noteDAO.update(note);
+		return 1l;
 	}
+
+	public long deleteNote(Note note, HttpServletRequest request) {
+
+		noteDAO.delete(note);
+		return 1l;
+	}
+	public Note getNoteFindById(Long id) {
+		return noteDAO.getFindById(id);
+	}
+
 	public ArrayList<Note> getAll() {
-		
+
 		return noteDAO.getAll();
 	}
 
-public ArrayList<Note> getAll(Long userId) {
-		
+	public ArrayList<Note> getAll(Long userId) {
+
 		return noteDAO.getAll(userId);
 	}
 }
