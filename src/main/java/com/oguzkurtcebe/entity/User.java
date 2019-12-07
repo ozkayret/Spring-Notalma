@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "kullanicilar")
@@ -81,14 +82,19 @@ public class User {
 		this.create_date = create_date;
 	}
 
-	public String getKey() {
-		return key;
+	
+
+
+
+	@Transient
+    private String pass2;
+	public String getPass2() {
+		return pass2;
 	}
 
-	public void setKey(String key) {
-		this.key = key;
+	public void setPass2(String pass2) {
+		this.pass2 = pass2;
 	}
-
 	@Column(nullable = false)
 	private String username;
 	private String name;
@@ -97,6 +103,17 @@ public class User {
 	private String pass;
 	private boolean active = false;
 	private Date create_date = new Date();
-	private String key;
+	private String value_key;
+
+	
+
+
+	public String getValue_key() {
+		return value_key;
+	}
+
+	public void setValue_key(String value_key) {
+		this.value_key = value_key;
+	}
 
 }
